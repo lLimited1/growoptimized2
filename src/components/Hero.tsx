@@ -137,7 +137,10 @@ export const Hero = () => {
         </motion.p>
 
         <motion.div variants={itemVariants} className="mb-6 flex flex-wrap justify-center gap-4">
-          <MagneticButton className="group flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-lg font-bold text-white shadow-[0_0_30px_rgba(124,92,252,0.4)] transition-all hover:shadow-[0_0_50px_rgba(124,92,252,0.6)]">
+          <MagneticButton
+            onClick={() => window.open("https://growlab.us/form-page", "_blank")}
+            className="group flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-lg font-bold text-white shadow-[0_0_30px_rgba(124,92,252,0.4)] transition-all hover:shadow-[0_0_50px_rgba(124,92,252,0.6)]"
+          >
             Quiero ver cómo funcionaría en mi lanzamiento
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </MagneticButton>

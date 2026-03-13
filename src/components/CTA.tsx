@@ -29,7 +29,10 @@ export const CTA = () => {
           </p>
 
           <div className="flex flex-col items-center gap-8">
-            <MagneticButton className="group flex items-center gap-3 rounded-full bg-accent px-12 py-6 text-xl font-bold text-white shadow-[0_0_30px_rgba(124,92,252,0.4)] transition-all hover:shadow-[0_0_60px_rgba(124,92,252,0.6)] hover:scale-105 active:scale-95">
+            <MagneticButton
+              onClick={() => window.open("https://growlab.us/form-page", "_blank")}
+              className="group flex items-center gap-3 rounded-full bg-accent px-12 py-6 text-xl font-bold text-white shadow-[0_0_30px_rgba(124,92,252,0.4)] transition-all hover:shadow-[0_0_60px_rgba(124,92,252,0.6)] hover:scale-105 active:scale-95"
+            >
               Quiero simular mi ecosistema
               <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-2" />
             </MagneticButton>
