@@ -40,8 +40,8 @@ export const Method = () => {
             <div className="h-[1px] w-8 bg-accent" />
             Nuestro método
           </div>
-          <h2 className="mb-6 font-serif text-4xl font-semibold leading-tight md:text-5xl">
-            Así lo trabajamos <span className="italic text-accent-light text-glow">contigo</span>
+          <h2 className="mb-6 font-display text-4xl font-bold leading-tight md:text-6xl uppercase tracking-tight">
+            Así lo trabajamos <span className="text-accent-light text-glow">contigo</span>
           </h2>
           <p className="max-w-2xl text-lg text-white/50 font-light leading-relaxed">
             Primero entendemos tu lanzamiento. Después construimos lo que realmente necesitas para escalar tu facturación de forma previsible.

@@ -28,9 +28,9 @@ export const Results = () => {
             Resultados reales
             <div className="h-[1px] w-8 bg-accent" />
           </div>
-          <h2 className="mb-6 font-serif text-4xl font-semibold leading-tight md:text-5xl">
+          <h2 className="mb-6 font-display text-4xl font-bold leading-tight md:text-6xl uppercase tracking-tight">
             Esto no nace de una idea bonita.<br />
-            Nace de lo que ya hemos visto <span className="italic text-accent-light text-glow">funcionar.</span>
+            Nace de lo que ya hemos visto <span className="text-accent-light text-glow">funcionar.</span>
           </h2>
           <p className="max-w-2xl mx-auto text-white/50 text-sm md:text-base">
             Nuestros procesos están validados por datos y experiencia real en el mercado, garantizando escalabilidad y previsibilidad.

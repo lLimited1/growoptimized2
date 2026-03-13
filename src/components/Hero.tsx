@@ -121,7 +121,7 @@ export const Hero = () => {
 
         <motion.h1
           variants={itemVariants}
-          className="mx-auto mb-6 max-w-4xl font-serif text-4xl font-semibold leading-[1.1] tracking-tight md:text-7xl text-white"
+          className="mx-auto mb-6 max-w-4xl font-display text-5xl font-bold leading-[1.1] tracking-tight md:text-8xl text-white uppercase"
           style={{
             filter: (tier === "high" && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)))
               ? "url(#text-glow)"
@@ -129,33 +129,15 @@ export const Hero = () => {
           }}
         >
           No necesitas solo más leads.<br />
-          Necesitas que más de esos leads <span className="italic text-accent-light">lleguen, respondan y compren.</span>
+          Necesitas que más de esos leads <span className="text-accent-light">lleguen, respondan y compren.</span>
         </motion.h1>
-
-        <motion.p variants={itemVariants} className="mx-auto mb-4 max-w-2xl text-lg leading-relaxed text-white/70">
-          Implementamos un ecosistema de inteligencia artificial para lanzamientos digitales que te ayuda a aumentar la asistencia a tus clases en vivo, dar seguimiento a más personas y sostener mejor la conversación cuando se abre carrito.
-        </motion.p>
 
         <motion.p variants={itemVariants} className="mx-auto mb-10 max-w-xl text-sm italic text-white/40">
           Porque una cosa es llenar una lista. Y otra muy distinta es mover esa lista de verdad.
         </motion.p>
 
-        <motion.div variants={itemVariants} className="mb-6 flex flex-wrap justify-center gap-4">
-          <MagneticButton
-            onClick={() => window.open("https://growlab.us/form-page", "_blank")}
-            className="group flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-lg font-bold text-white shadow-[0_0_30px_rgba(124,92,252,0.4)] transition-all hover:shadow-[0_0_50px_rgba(124,92,252,0.6)]"
-          >
-            Quiero ver cómo funcionaría en mi lanzamiento
-            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </MagneticButton>
-        </motion.div>
-
-        <motion.p variants={itemVariants} className="mx-auto mb-16 max-w-md text-xs text-white/30">
-          Completa el formulario y descubre cómo se vería este sistema dentro de tu próximo lanzamiento.
-        </motion.p>
-
         {/* Video Player */}
-        <motion.div variants={itemVariants} className="relative mx-auto max-w-4xl">
+        <motion.div variants={itemVariants} className="relative mx-auto max-w-4xl mb-12">
           <div className="absolute -inset-1 rounded-[2.5rem] bg-gradient-to-r from-accent via-blue-500 to-accent opacity-30 blur-xl" />
           <div className="relative aspect-video overflow-hidden rounded-[2rem] border border-white/10 bg-black/40 backdrop-blur-3xl shadow-2xl">
             {!isVideoPlaying ? (
@@ -183,8 +165,8 @@ export const Hero = () => {
             ) : (
               /* Actual Video Embed */
               <div className="h-full w-full">
-                {/* 
-                  REPLACE THE ID BELOW WITH YOUR YOUTUBE VIDEO ID 
+                {/*
+                  REPLACE THE ID BELOW WITH YOUR YOUTUBE VIDEO ID
                   Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ -> ID is "dQw4w9WgXcQ"
                 */}
                 <iframe
@@ -198,7 +180,21 @@ export const Hero = () => {
           </div>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="mt-16 flex flex-wrap justify-center gap-8 text-sm font-medium text-white/50">
+        <motion.div variants={itemVariants} className="mb-6 flex flex-wrap justify-center gap-4">
+          <MagneticButton
+            onClick={() => window.open("https://growlab.us/form-page", "_blank")}
+            className="group flex items-center gap-2 rounded-full bg-accent px-10 py-5 text-xl font-bold text-white shadow-[0_0_30px_rgba(124,92,252,0.4)] transition-all hover:shadow-[0_0_50px_rgba(124,92,252,0.6)]"
+          >
+            Quiero ver cómo funcionaría en mi lanzamiento
+            <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
+          </MagneticButton>
+        </motion.div>
+
+        <motion.p variants={itemVariants} className="mx-auto mb-16 max-w-md text-xs text-white/30">
+          Completa el formulario y descubre cómo se vería este sistema dentro de tu próximo lanzamiento.
+        </motion.p>
+
+        <motion.div variants={itemVariants} className="mt-8 flex flex-wrap justify-center gap-8 text-sm font-medium text-white/50">
           <div className="flex items-center gap-2">
             <Zap className="h-4 w-4 text-accent" strokeWidth={1.5} />
             Más personas en tu evento en vivo

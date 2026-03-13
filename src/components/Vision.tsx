@@ -17,9 +17,9 @@ export const Vision = () => {
             <div className="h-[1px] w-8 bg-accent" />
             El nuevo estándar
           </div>
-          <h2 className="mb-6 font-serif text-4xl font-semibold leading-tight md:text-5xl">
+          <h2 className="mb-6 font-display text-4xl font-bold leading-tight md:text-6xl uppercase tracking-tight">
             Los lanzamientos que más van a crecer no serán solo los que tengan más tráfico.<br />
-            Serán los que mejor sepan <span className="italic text-accent-light text-glow">acompañar a su gente.</span>
+            Serán los que mejor sepan <span className="text-accent-light text-glow">acompañar a su gente.</span>
           </h2>
           <div className="max-w-3xl space-y-6 text-lg text-white/50 font-light leading-relaxed">
             <p>
@@ -39,7 +39,7 @@ export const Vision = () => {
         >
           <div className="absolute inset-0 bg-accent/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <div className="relative border-l-4 border-accent bg-white/[0.03] p-10 backdrop-blur-sm rounded-r-2xl border-y border-r border-white/5">
-            <p className="font-serif text-2xl italic text-white/90 md:text-3xl leading-relaxed">
+            <p className="font-display text-2xl font-bold italic text-white/90 md:text-4xl leading-relaxed uppercase tracking-tight">
               "La inteligencia artificial no viene a quitarle alma a tu lanzamiento. Viene a darle estructura a una parte que hoy se te puede estar escapando."
             </p>
           </div>

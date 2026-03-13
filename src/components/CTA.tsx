@@ -21,8 +21,8 @@ export const CTA = () => {
             Da el siguiente paso
             <div className="h-[1px] w-12 bg-accent" />
           </div>
-          <h2 className="mb-8 font-serif text-4xl font-semibold leading-[1.1] md:text-6xl tracking-tight text-white">
-            Mira cómo se vería este ecosistema dentro de tu <span className="italic text-accent-light text-glow">próximo lanzamiento</span>
+          <h2 className="mb-8 font-display text-4xl font-bold leading-[1.1] md:text-7xl tracking-tight text-white uppercase">
+            Mira cómo se vería este ecosistema dentro de tu <span className="text-accent-light text-glow">próximo lanzamiento</span>
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-lg text-white/50 font-light leading-relaxed">
             Esto no es una llamada vacía. Es una sesión estratégica para aterrizar cómo funcionaría este sistema en un lanzamiento como el tuyo, recuperando ventas que hoy estás perdiendo.

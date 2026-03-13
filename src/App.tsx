@@ -36,8 +36,6 @@ export default function App() {
         style={{ scaleX }}
       />
 
-      <Navbar />
-
       <main>
         <Hero />
 
