@@ -7,7 +7,7 @@ export const Closing = () => {
     <section className="py-24">
       <div className="container mx-auto px-6">
         <div className="mx-auto max-w-4xl">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -15,8 +15,8 @@ export const Closing = () => {
           >
             Tu próximo lanzamiento puede seguir igual… o puede empezar a recuperar parte de lo que hoy se está <span className="italic text-accent-light">perdiendo.</span>
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -35,13 +35,16 @@ export const Closing = () => {
             <p>
               No por suerte. No por una promesa bonita. <strong className="text-white font-medium">Sino porque ahora tienes una estructura que acompaña mejor lo que antes se te estaba yendo de las manos.</strong>
             </p>
-            
+
             <p className="font-serif text-2xl italic text-accent-light">
               Y eso, cuando lanzas en serio, se siente.
             </p>
 
             <div className="pt-8">
-              <MagneticButton className="group flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-lg font-bold text-white shadow-[0_0_30px_rgba(124,92,252,0.4)] transition-all hover:shadow-[0_0_50px_rgba(124,92,252,0.6)]">
+              <MagneticButton
+                onClick={() => window.open("https://growlab.us/form-page", "_blank")}
+                className="group flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-lg font-bold text-white shadow-[0_0_30px_rgba(124,92,252,0.4)] transition-all hover:shadow-[0_0_50px_rgba(124,92,252,0.6)]"
+              >
                 Ver mi simulación
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </MagneticButton>

@@ -65,11 +65,52 @@ export default function App() {
 
         <Difference />
 
-        <div className="relative py-12 flex justify-center">
-          <div className="h-32 w-32 rounded-full border border-white/5 flex items-center justify-center relative">
-            <div className="absolute inset-0 rounded-full border border-accent/20 animate-[spin_20s_linear_infinite]" />
-            <div className="absolute inset-4 rounded-full border border-accent/10 animate-[spin_15s_linear_infinite_reverse]" />
-            <div className="h-4 w-4 rounded-full bg-accent shadow-[0_0_20px_rgba(124,92,252,0.8)]" />
+        {/* Solar System Decoration */}
+        <div className="relative py-24 flex justify-center overflow-hidden">
+          <div className="relative h-64 w-64 md:h-80 md:w-80 flex items-center justify-center">
+            {/* Outer Orbit */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 rounded-full border border-white/5"
+            >
+              <div className="absolute top-1/2 left-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/40 blur-[2px]" />
+            </motion.div>
+
+            {/* Middle Orbit */}
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-8 rounded-full border border-white/5"
+            >
+              <div className="absolute top-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/30 blur-[1px]" />
+              <div className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-accent/30 blur-[1px]" />
+            </motion.div>
+
+            {/* Inner Orbit */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-20 rounded-full border border-accent/10"
+            >
+              <div className="absolute top-1/2 right-0 h-2 w-2 translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_10px_rgba(124,92,252,0.8)]" />
+            </motion.div>
+
+            {/* Sun / Core */}
+            <div className="relative z-10">
+              <motion.div
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.5, 0.8, 0.5]
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-0 -z-10 rounded-full bg-accent/20 blur-xl"
+              />
+              <div className="h-6 w-6 rounded-full bg-accent shadow-[0_0_30px_rgba(124,92,252,1)]" />
+            </div>
+
+            {/* Ambient Glow */}
+            <div className="absolute inset-0 bg-accent/5 blur-3xl rounded-full -z-20" />
           </div>
         </div>
 

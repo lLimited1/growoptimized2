@@ -30,6 +30,7 @@ const itemVariants = {
 export const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const tier = usePerformance();
 
   useEffect(() => {
@@ -150,20 +151,45 @@ export const Hero = () => {
           Completa el formulario y descubre cómo se vería este sistema dentro de tu próximo lanzamiento.
         </motion.p>
 
-        {/* Video Placeholder */}
+        {/* Video Player */}
         <motion.div variants={itemVariants} className="relative mx-auto max-w-4xl">
           <div className="absolute -inset-1 rounded-[2.5rem] bg-gradient-to-r from-accent via-blue-500 to-accent opacity-30 blur-xl" />
-          <div className="relative aspect-video overflow-hidden rounded-[2rem] border border-white/10 bg-black/40 backdrop-blur-3xl">
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-b from-transparent to-black/60">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="relative flex h-20 w-20 items-center justify-center rounded-full bg-accent text-white shadow-[0_0_40px_rgba(124,92,252,0.6)]"
-              >
-                <div className="absolute -inset-4 animate-pulse rounded-full border border-accent/20" />
-                <Play className="ml-1 h-8 w-8 fill-current" />
-              </motion.button>
-            </div>
+          <div className="relative aspect-video overflow-hidden rounded-[2rem] border border-white/10 bg-black/40 backdrop-blur-3xl shadow-2xl">
+            {!isVideoPlaying ? (
+              /* Video Cover / Placeholder */
+              <div className="group/video relative flex h-full w-full items-center justify-center bg-gradient-to-b from-transparent to-black/60 cursor-pointer overflow-hidden">
+                {/* Decorative background for the cover - could be an image */}
+                <div className="absolute inset-0 bg-accent/5 mix-blend-overlay group-hover/video:scale-105 transition-transform duration-700" />
+
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => setIsVideoPlaying(true)}
+                  className="relative flex h-24 w-24 items-center justify-center rounded-full bg-accent text-white shadow-[0_0_40px_rgba(124,92,252,0.6)] z-10"
+                >
+                  <div className="absolute -inset-4 animate-pulse rounded-full border border-accent/20" />
+                  <Play className="ml-1 h-10 w-10 fill-current text-white" />
+                </motion.button>
+
+                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/40 text-sm font-medium tracking-[0.2em] uppercase opacity-0 group-hover/video:opacity-100 transition-opacity duration-500">
+                  Click para reproducir demo
+                </div>
+              </div>
+            ) : (
+              /* Actual Video Embed */
+              <div className="h-full w-full">
+                {/* 
+                  REPLACE THE ID BELOW WITH YOUR YOUTUBE VIDEO ID 
+                  Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ -> ID is "dQw4w9WgXcQ"
+                */}
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                  className="h-full w-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
           </div>
         </motion.div>
 
