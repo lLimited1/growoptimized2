@@ -2,7 +2,10 @@ import { motion } from "motion/react";
 
 export const Approach = () => {
   return (
-    <section className="py-24">
+    <section className="py-24 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 blur-[120px] -z-10" />
+
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,9 +19,9 @@ export const Approach = () => {
           </div>
           <h2 className="mb-6 font-serif text-4xl font-semibold leading-tight md:text-5xl">
             Hoy ya no gana solo el que capta más.<br />
-            Gana el que mejor sabe <span className="italic text-accent-light">mover a sus leads.</span>
+            Gana el que mejor sabe <span className="italic text-accent-light text-glow">mover a sus leads.</span>
           </h2>
-          <div className="max-w-3xl space-y-6 text-lg text-white/60">
+          <div className="max-w-3xl space-y-6 text-lg text-white/60 leading-relaxed font-light">
             <p>
               El mercado cambió. Hoy la atención vale más. La competencia es más dura. Los leads comparan más. Y responder tarde cuesta más.
             </p>
@@ -32,11 +35,14 @@ export const Approach = () => {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="border-l-2 border-accent bg-gradient-to-r from-accent/5 to-transparent p-8"
+          className="relative group"
         >
-          <p className="font-serif text-xl italic text-white/90 md:text-2xl">
-            "Una lista grande sin seguimiento es solo una oportunidad mal aprovechada."
-          </p>
+          <div className="absolute inset-0 bg-accent/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="relative border-l-4 border-accent bg-white/[0.03] p-10 backdrop-blur-sm rounded-r-2xl border-y border-r border-white/5">
+            <p className="font-serif text-2xl italic text-white/90 md:text-3xl leading-snug">
+              "Una lista grande sin seguimiento es solo una oportunidad mal aprovechada."
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

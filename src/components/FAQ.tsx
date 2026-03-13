@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 
@@ -29,7 +29,11 @@ export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24">
+    <section id="faq" className="py-24 relative overflow-hidden">
+      {/* Decorative background glow */}
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/5 blur-[100px] -z-10" />
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/5 blur-[80px] -z-10" />
+
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,23 +46,32 @@ export const FAQ = () => {
             Preguntas frecuentes
           </div>
           <h2 className="mb-6 font-serif text-4xl font-semibold leading-tight md:text-5xl">
-            Si estás pensando esto, <span className="italic text-accent-light">te entiendo</span>
+            Si estás pensando esto, <span className="italic text-accent-light text-glow">te entiendo</span>
           </h2>
+          <p className="max-w-2xl text-lg text-white/50 font-light leading-relaxed">
+            Resolvemos las dudas más comunes para que solo te preocupes por lo que realmente importa: tu lanzamiento.
+          </p>
         </motion.div>
 
         <div className="mx-auto max-w-3xl">
           {faqs.map((faq, i) => (
-            <div key={i} className="border-b border-white/10">
+            <div key={i} className="border-b border-white/5 first:border-t">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="flex w-full items-center justify-between py-6 text-left transition-colors hover:text-accent-light"
+                className="group flex w-full items-center justify-between py-8 text-left transition-all hover:px-2"
               >
-                <span className="text-lg font-medium">{faq.q}</span>
+                <span className={`text-xl font-medium transition-colors ${openIndex === i ? "text-accent-light" : "text-white/80 group-hover:text-white"}`}>
+                  {faq.q}
+                </span>
                 <motion.div
-                  animate={{ rotate: openIndex === i ? 45 : 0 }}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10"
+                  animate={{
+                    rotate: openIndex === i ? 45 : 0,
+                    backgroundColor: openIndex === i ? "rgba(124, 92, 252, 0.1)" : "transparent",
+                    borderColor: openIndex === i ? "rgba(124, 92, 252, 0.3)" : "rgba(255, 255, 255, 0.1)"
+                  }}
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors"
                 >
-                  <Plus className="h-4 w-4" />
+                  <Plus className={`h-5 w-5 transition-colors ${openIndex === i ? "text-accent-light" : "text-white/40"}`} />
                 </motion.div>
               </button>
               <AnimatePresence>
@@ -67,10 +80,10 @@ export const FAQ = () => {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-6 text-white/60 leading-relaxed">
+                    <p className="pb-8 text-lg font-light text-white/40 leading-relaxed pl-2 pr-12">
                       {faq.a}
                     </p>
                   </motion.div>

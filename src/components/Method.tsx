@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const steps = [
   {
@@ -25,7 +25,10 @@ const steps = [
 
 export const Method = () => {
   return (
-    <section id="metodo" className="py-24">
+    <section id="metodo" className="py-24 relative overflow-hidden">
+      {/* Decorative background glow */}
+      <div className="absolute top-1/2 -left-20 w-[400px] h-[400px] bg-accent/5 blur-[100px] -z-10" />
+
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,29 +41,29 @@ export const Method = () => {
             Nuestro método
           </div>
           <h2 className="mb-6 font-serif text-4xl font-semibold leading-tight md:text-5xl">
-            Así lo trabajamos <span className="italic text-accent-light">contigo</span>
+            Así lo trabajamos <span className="italic text-accent-light text-glow">contigo</span>
           </h2>
-          <p className="max-w-2xl text-lg text-white/60">
-            Primero entendemos tu lanzamiento. Después construimos lo que realmente necesitas.
+          <p className="max-w-2xl text-lg text-white/50 font-light leading-relaxed">
+            Primero entendemos tu lanzamiento. Después construimos lo que realmente necesitas para escalar tu facturación de forma previsible.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative flex gap-6 rounded-3xl border border-white/5 bg-white/[0.02] p-8 transition-colors hover:bg-white/[0.05]"
+              className="group relative flex gap-6 rounded-3xl border border-white/5 bg-white/[0.02] p-8 transition-all hover:bg-white/[0.05] hover:border-white/10 hover:-translate-y-1"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent text-xl font-bold text-white shadow-[0_0_15px_rgba(124,92,252,0.3)]">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-accent text-2xl font-display font-bold text-white shadow-[0_0_20px_rgba(124,92,252,0.3)] group-hover:shadow-[0_0_30px_rgba(124,92,252,0.5)] transition-all">
                 {step.num}
               </div>
               <div>
-                <h3 className="mb-2 text-xl font-bold text-white">{step.title}</h3>
-                <p className="text-sm leading-relaxed text-white/60">{step.desc}</p>
+                <h3 className="mb-2 text-xl font-bold text-white group-hover:text-accent-light transition-colors">{step.title}</h3>
+                <p className="text-sm leading-relaxed text-white/40">{step.desc}</p>
               </div>
             </motion.div>
           ))}
