@@ -2,9 +2,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Zap, Menu, X } from "lucide-react";
 import { MagneticButton } from "./ui/MagneticButton";
+import { usePerformance } from "../hooks/usePerformance";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const tier = usePerformance();
 
   const navLinks = [
     { name: "El problema", href: "#problema" },
@@ -22,7 +24,7 @@ export const Navbar = () => {
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
         className="fixed top-0 left-0 right-0 z-50 px-4 py-4 md:px-6"
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-black/40 px-4 py-2 backdrop-blur-md md:px-6 md:py-3">
+        <div className={`mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-black/40 px-4 py-2 ${tier === "high" ? "backdrop-blur-xl" : "backdrop-blur-md"} md:px-6 md:py-3`}>
           <a href="#" className="flex items-center gap-2 font-display text-lg font-bold tracking-tight">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent shadow-[0_0_15px_rgba(124,92,252,0.5)]">
               <Zap className="h-4 w-4 text-white" strokeWidth={2.5} />

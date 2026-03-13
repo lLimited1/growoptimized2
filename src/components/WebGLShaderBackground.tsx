@@ -1,9 +1,11 @@
 "use client"
 import { useEffect, useRef } from "react"
 import * as THREE from "three"
+import { usePerformance } from "../hooks/usePerformance"
 
 export function WebGLShaderBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const tier = usePerformance()
 
   useEffect(() => {
     if (!canvasRef.current) return
@@ -48,6 +50,13 @@ export function WebGLShaderBackground() {
 
       void main() {
         vec2 p = (gl_FragCoord.xy * 2.0 - resolution) / min(resolution.x, resolution.y);
+        
+        // Use highp only for high tier, others get reduced precision/complexity
+        #ifdef GL_FRAGMENT_PRECISION_HIGH
+          precision highp float;
+        #else
+          precision mediump float;
+        #endif
 
         float d = length(p) * distortion;
 
@@ -96,7 +105,8 @@ export function WebGLShaderBackground() {
     }
 
     const onResize = () => {
-      const scale = 0.75 // Downsample internally for better performance
+      // Dynamic scale based on performance tier
+      const scale = tier === "high" ? 1.0 : tier === "mid" ? 0.75 : 0.5
       const w = canvas.clientWidth * scale
       const h = canvas.clientHeight * scale
       renderer.setSize(w, h, false)

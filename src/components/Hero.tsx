@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { Play, ArrowRight, Zap, MessageSquare, Clock } from "lucide-react";
 import { MagneticButton } from "./ui/MagneticButton";
 import { MeshGradient, PulsingBorder } from "@paper-design/shaders-react";
+import { usePerformance } from "../hooks/usePerformance";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,6 +30,7 @@ const itemVariants = {
 export const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = useState(false);
+  const tier = usePerformance();
 
   useEffect(() => {
     const handleMouseEnter = () => setIsActive(true);
@@ -55,6 +57,7 @@ export const Hero = () => {
       <svg className="absolute inset-0 w-0 h-0 pointer-events-none">
         <defs>
           <filter id="glass-effect">
+            {tier !== "low" && <feGaussianBlur stdDeviation="1" />}
             <feColorMatrix
               type="matrix"
               values="1 0 0 0 0.02
@@ -64,7 +67,7 @@ export const Hero = () => {
             />
           </filter>
           <filter id="text-glow">
-            <feGaussianBlur stdDeviation="1" result="coloredBlur" />
+            <feGaussianBlur stdDeviation={tier === "high" ? 2 : 1} result="coloredBlur" />
             <feMerge>
               <feMergeNode in="coloredBlur" />
               <feMergeNode in="SourceGraphic" />
@@ -77,17 +80,19 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0">
         <MeshGradient
           className="absolute inset-0 w-full h-full"
-          colors={["#06060c", "#2e1065", "#1e3a8a", "#06060c", "#06060c"]}
-          speed={0.1}
+          colors={tier === "low" ? ["#06060c", "#1e3a8a", "#06060c"] : ["#06060c", "#2e1065", "#1e3a8a", "#06060c", "#06060c"]}
+          speed={tier === "high" ? 0.2 : 0.1}
           backgroundcolor="#06060c"
         />
-        <MeshGradient
-          className="absolute inset-0 w-full h-full opacity-10 md:opacity-20"
-          colors={["#06060c", "#4c1d95", "#1e3a8a", "#06060c"]}
-          speed={0.1}
-          wireframe="false"
-          backgroundcolor="transparent"
-        />
+        {tier !== "low" && (
+          <MeshGradient
+            className="absolute inset-0 w-full h-full opacity-10 md:opacity-20"
+            colors={["#06060c", "#4c1d95", "#1e3a8a", "#06060c"]}
+            speed={0.1}
+            wireframe="false"
+            backgroundcolor="transparent"
+          />
+        )}
         {/* Bottom Fade Overlay to smooth transition */}
         <div className="absolute inset-x-0 bottom-0 h-[50vh] bg-gradient-to-t from-[#06060c] via-[#06060c]/95 to-transparent pointer-events-none z-[1]" />
       </div>
@@ -105,6 +110,7 @@ export const Hero = () => {
         <motion.div
           variants={itemVariants}
           className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-bold tracking-widest text-accent-light uppercase backdrop-blur-sm"
+          style={{ filter: tier === "high" ? "url(#glass-effect)" : "none" }}
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
