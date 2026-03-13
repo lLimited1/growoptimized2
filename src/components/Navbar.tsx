@@ -42,7 +42,10 @@ export const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <MagneticButton className="hidden rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white shadow-[0_0_20px_rgba(124,92,252,0.3)] transition-all hover:shadow-[0_0_30px_rgba(124,92,252,0.5)] sm:block">
+            <MagneticButton
+              onClick={() => window.open("https://growlab.us/form-page", "_blank")}
+              className="hidden rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white shadow-[0_0_20px_rgba(124,92,252,0.3)] transition-all hover:shadow-[0_0_30px_rgba(124,92,252,0.5)] sm:block"
+            >
               Simular ecosistema
             </MagneticButton>
 
@@ -77,7 +80,10 @@ export const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <MagneticButton className="mt-4 rounded-full bg-accent px-8 py-4 text-lg font-bold text-white shadow-[0_0_30px_rgba(124,92,252,0.4)]">
+              <MagneticButton
+                onClick={() => window.open("https://growlab.us/form-page", "_blank")}
+                className="mt-4 rounded-full bg-accent px-8 py-4 text-lg font-bold text-white shadow-[0_0_30px_rgba(124,92,252,0.4)]"
+              >
                 Simular ecosistema
               </MagneticButton>
             </div>
