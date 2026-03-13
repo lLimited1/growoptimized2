@@ -29,7 +29,7 @@ export const Navbar = () => {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent shadow-[0_0_15px_rgba(124,92,252,0.5)]">
               <Zap className="h-4 w-4 text-white" strokeWidth={2.5} />
             </div>
-            <span>GrowLab</span>
+            <span>GrowLab AI</span>
           </a>
 
           {/* Desktop Links */}

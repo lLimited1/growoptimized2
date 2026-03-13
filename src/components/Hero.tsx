@@ -161,8 +161,14 @@ export const Hero = () => {
             {!isVideoPlaying ? (
               /* Video Cover / Placeholder */
               <div className="group/video relative flex h-full w-full items-center justify-center bg-gradient-to-b from-transparent to-black/60 cursor-pointer overflow-hidden">
-                {/* Decorative background for the cover - could be an image */}
-                <div className="absolute inset-0 bg-accent/5 mix-blend-overlay group-hover/video:scale-105 transition-transform duration-700" />
+                {/* Video Thumbnail */}
+                <img
+                  src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
+                  alt="Video Thumbnail"
+                  className="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-700 group-hover/video:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-accent/5 mix-blend-overlay" />
 
                 <motion.button
                   whileHover={{ scale: 1.1 }}
@@ -173,10 +179,6 @@ export const Hero = () => {
                   <div className="absolute -inset-4 animate-pulse rounded-full border border-accent/20" />
                   <Play className="ml-1 h-10 w-10 fill-current text-white" />
                 </motion.button>
-
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/40 text-sm font-medium tracking-[0.2em] uppercase opacity-0 group-hover/video:opacity-100 transition-opacity duration-500">
-                  Click para reproducir demo
-                </div>
               </div>
             ) : (
               /* Actual Video Embed */
