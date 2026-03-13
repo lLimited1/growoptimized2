@@ -1,0 +1,85 @@
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus } from "lucide-react";
+import { useState } from "react";
+
+const faqs = [
+  {
+    q: "\"Ya tengo equipo comercial\"",
+    a: "Buenísimo. Esto no busca reemplazar a tu equipo. Busca que no se quede corto cuando el volumen sube. Porque cuando entran muchas personas al mismo tiempo, por muy bueno que sea el equipo, llega un punto donde la velocidad baja, el seguimiento se rompe y se pierden oportunidades.",
+  },
+  {
+    q: "\"Ya hacemos seguimiento\"",
+    a: "Seguramente sí. La pregunta es si ese seguimiento realmente aguanta el volumen de un lanzamiento sin perder calidad, velocidad y constancia. Una cosa es seguir bien a 100 personas. Otra muy distinta es mover a miles en medio del evento y del carrito.",
+  },
+  {
+    q: "\"No sé si esto me va a dar retorno\"",
+    a: "Es válido. Pero cuando subes un 10% o 15% la asistencia en una lista grande, eso puede representar cientos de personas más entrando al momento importante. Y si una parte compra, esto deja de verse como costo y empieza a verse como recuperación de oportunidad.",
+  },
+  {
+    q: "\"Suena complejo\"",
+    a: "Por dentro lo es. Pero esa no es tu preocupación. Nosotros absorbemos la complejidad para que tú no tengas que volverte técnico. Tú enfócate en lanzar. Nosotros en ayudarte a que ese lanzamiento rinda mejor.",
+  },
+  {
+    q: "\"No sé si esto aplica a mi nicho\"",
+    a: "Más que el nicho, importa la estructura. Si haces lanzamientos, manejas volumen y sientes que parte de la lista no está llegando, no está respondiendo o no está siendo atendida como debería, esto puede hacer mucho sentido para ti.",
+  },
+];
+
+export const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section id="faq" className="py-24">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="mb-4 flex items-center gap-3 text-xs font-bold tracking-[0.2em] text-accent uppercase">
+            <div className="h-[1px] w-8 bg-accent" />
+            Preguntas frecuentes
+          </div>
+          <h2 className="mb-6 font-serif text-4xl font-semibold leading-tight md:text-5xl">
+            Si estás pensando esto, <span className="italic text-accent-light">te entiendo</span>
+          </h2>
+        </motion.div>
+
+        <div className="mx-auto max-w-3xl">
+          {faqs.map((faq, i) => (
+            <div key={i} className="border-b border-white/10">
+              <button
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className="flex w-full items-center justify-between py-6 text-left transition-colors hover:text-accent-light"
+              >
+                <span className="text-lg font-medium">{faq.q}</span>
+                <motion.div
+                  animate={{ rotate: openIndex === i ? 45 : 0 }}
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10"
+                >
+                  <Plus className="h-4 w-4" />
+                </motion.div>
+              </button>
+              <AnimatePresence>
+                {openIndex === i && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <p className="pb-6 text-white/60 leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
