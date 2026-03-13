@@ -20,7 +20,7 @@ export const Results = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-10%" }}
           className="mb-16 text-center"
         >
           <div className="mb-4 flex items-center justify-center gap-3 text-xs font-bold tracking-[0.2em] text-accent uppercase">
@@ -43,7 +43,7 @@ export const Results = () => {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-10%" }}
               transition={{ delay: i * 0.1, type: "spring", stiffness: 100, damping: 20 }}
               className="group relative flex flex-col items-center justify-center rounded-2xl border border-white/5 bg-white/[0.02] p-8 text-center backdrop-blur-sm transition-all hover:bg-white/[0.04] hover:border-white/10 min-h-[160px]"
             >

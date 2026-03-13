@@ -105,10 +105,15 @@ export function WebGLShaderBackground() {
     }
 
     const onResize = () => {
-      // Dynamic scale based on performance tier
-      const scale = tier === "high" ? 1.0 : tier === "mid" ? 0.75 : 0.5
+      // Dynamic scale based on performance tier and mobile detection
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+      const baseScale = tier === "high" ? 1.0 : tier === "mid" ? 0.75 : 0.5
+      const scale = isMobile ? baseScale * 0.7 : baseScale
+
       const w = canvas.clientWidth * scale
       const h = canvas.clientHeight * scale
+
+      renderer.setPixelRatio(isMobile ? 1.0 : Math.min(window.devicePixelRatio, 1.5))
       renderer.setSize(w, h, false)
       uniforms.resolution.value = [w, h]
     }

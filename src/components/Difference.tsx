@@ -11,7 +11,7 @@ export const Difference = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-10%" }}
           className="mb-16"
         >
           <div className="mb-4 flex items-center gap-3 text-xs font-bold tracking-[0.2em] text-accent uppercase">
@@ -31,7 +31,7 @@ export const Difference = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-10%" }}
             className="group relative rounded-3xl border border-white/5 bg-white/[0.02] p-10 transition-all hover:bg-white/[0.05] hover:border-white/10"
           >
             <div className="mb-6 flex items-center gap-3 text-accent-light">
@@ -59,7 +59,7 @@ export const Difference = () => {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-10%" }}
             className="group relative rounded-3xl border border-white/5 bg-white/[0.02] p-10 transition-all hover:bg-white/[0.05] hover:border-white/10"
           >
             <div className="mb-6 flex items-center gap-3 text-accent-light">
@@ -88,7 +88,7 @@ export const Difference = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-10%" }}
           className="mt-16 group relative"
         >
           <div className="absolute inset-0 bg-accent/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -98,7 +98,7 @@ export const Difference = () => {
             </p>
           </div>
         </motion.div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 };

@@ -26,7 +26,7 @@ export const Cost = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-10%" }}
           className="mb-16"
         >
           <div className="mb-4 flex items-center gap-3 text-xs font-bold tracking-[0.2em] text-accent uppercase">
@@ -47,7 +47,7 @@ export const Cost = () => {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-10%" }}
               transition={{ delay: index * 0.1 }}
               className="group relative rounded-3xl border border-white/5 bg-white/[0.02] p-8 transition-all hover:bg-white/[0.05]"
             >
@@ -62,7 +62,7 @@ export const Cost = () => {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-10%" }}
           className="mt-16 border-l-2 border-accent bg-gradient-to-r from-accent/5 to-transparent p-8"
         >
           <p className="font-serif text-xl italic text-white/90 md:text-2xl">

@@ -10,7 +10,7 @@ export const Closing = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-10%" }}
             className="mb-12 font-serif text-3xl font-semibold leading-tight md:text-5xl"
           >
             Tu próximo lanzamiento puede seguir igual… o puede empezar a recuperar parte de lo que hoy se está <span className="italic text-accent-light">perdiendo.</span>
@@ -19,7 +19,7 @@ export const Closing = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-10%" }}
             transition={{ delay: 0.2 }}
             className="space-y-8 text-lg text-white/60"
           >

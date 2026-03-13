@@ -13,7 +13,7 @@ export const CTA = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-10%" }}
           className="mx-auto max-w-4xl rounded-[3rem] border border-white/10 bg-black/40 p-12 backdrop-blur-3xl md:p-20 shadow-[0_30px_100px_rgba(0,0,0,0.5)] ring-1 ring-inset ring-white/10"
         >
           <div className="mb-8 flex items-center justify-center gap-3 text-xs font-bold tracking-[0.25em] text-accent uppercase">

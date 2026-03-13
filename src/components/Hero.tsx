@@ -111,7 +111,6 @@ export const Hero = () => {
         <motion.div
           variants={itemVariants}
           className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-bold tracking-widest text-accent-light uppercase backdrop-blur-sm"
-          style={{ filter: tier === "high" ? "url(#glass-effect)" : "none" }}
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
@@ -123,7 +122,11 @@ export const Hero = () => {
         <motion.h1
           variants={itemVariants}
           className="mx-auto mb-6 max-w-4xl font-serif text-4xl font-semibold leading-[1.1] tracking-tight md:text-7xl text-white"
-          style={{ filter: "url(#text-glow)" }}
+          style={{
+            filter: (tier === "high" && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)))
+              ? "url(#text-glow)"
+              : "none"
+          }}
         >
           No necesitas solo más leads.<br />
           Necesitas que más de esos leads <span className="italic text-accent-light">lleguen, respondan y compren.</span>
