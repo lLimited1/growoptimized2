@@ -121,7 +121,7 @@ export const Hero = () => {
 
         <motion.h1
           variants={itemVariants}
-          className="mx-auto mb-6 max-w-4xl font-display text-5xl font-bold leading-[1.1] tracking-tight md:text-8xl text-white uppercase"
+          className="mx-auto mb-6 max-w-4xl font-display text-4xl font-extrabold leading-[1.15] tracking-tight md:text-6xl text-white"
           style={{
             filter: (tier === "high" && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)))
               ? "url(#text-glow)"
@@ -129,7 +129,7 @@ export const Hero = () => {
           }}
         >
           No necesitas solo más leads.<br />
-          Necesitas que más de esos leads <span className="text-accent-light">lleguen, respondan y compren.</span>
+          Necesitas que más de esos leads <span className="font-serif italic font-medium text-accent-light">lleguen, respondan y compren.</span>
         </motion.h1>
 
         <motion.p variants={itemVariants} className="mx-auto mb-10 max-w-xl text-sm italic text-white/40">

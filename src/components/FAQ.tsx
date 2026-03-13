@@ -45,8 +45,8 @@ export const FAQ = () => {
             <div className="h-[1px] w-8 bg-accent" />
             Preguntas frecuentes
           </div>
-          <h2 className="mb-6 font-display text-4xl font-bold leading-tight md:text-6xl uppercase tracking-tight">
-            Si estás pensando esto, <span className="text-accent-light text-glow">te entiendo</span>
+          <h2 className="mb-6 font-display text-3xl font-bold leading-tight md:text-5xl tracking-tight text-white">
+            Si estás pensando esto, <span className="font-serif italic font-medium text-accent-light">te entiendo</span>
           </h2>
           <p className="max-w-2xl text-lg text-white/50 font-light leading-relaxed">
             Resolvemos las dudas más comunes para que solo te preocupes por lo que realmente importa: tu lanzamiento.

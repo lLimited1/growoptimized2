@@ -100,9 +100,9 @@ export const Problem = () => {
             <div className="h-[1px] w-8 bg-accent" />
             El problema real
           </div>
-          <h2 className="mb-6 font-display text-4xl font-bold leading-tight md:text-6xl uppercase tracking-tight">
+          <h2 className="mb-6 font-display text-3xl font-bold leading-tight md:text-5xl tracking-tight text-white">
             El problema no es que te falten leads.<br />
-            El problema es todo lo que se te está <span className="text-accent-light">escapando después.</span>
+            El problema es todo lo que se te está <span className="font-serif italic font-medium text-accent-light">escapando después.</span>
           </h2>
           <p className="max-w-2xl text-lg text-white/60">
             Muchos expertos creen que su problema está en captar más. Pero cuando revisan el lanzamiento por dentro, se encuentran con que el dinero se queda sobre la mesa por falta de estructura.
@@ -132,8 +132,8 @@ export const Problem = () => {
           viewport={{ once: true, margin: "-10%" }}
           className="mt-16 rounded-3xl border-l-4 border-accent bg-gradient-to-r from-accent/10 to-transparent p-8 md:p-12"
         >
-          <p className="font-display text-2xl font-bold italic leading-relaxed text-white/90 md:text-4xl uppercase tracking-tight">
-            "Cuando un lead no llega, no responde o se enfría, no solo pierdes una conversación. Pierdes una oportunidad que ya habías pagado."
+          <p className="font-serif text-2xl italic font-medium leading-relaxed text-white/90 md:text-3xl">
+            "Cuando un lead no llega, no responde o se enfría, no solo pierdes una conversación. <span className="text-accent-light not-italic font-display font-bold">Pierdes una oportunidad que ya habías pagado."</span>
           </p>
         </motion.div>
       </div>

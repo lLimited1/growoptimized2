@@ -11,9 +11,9 @@ export const Closing = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
-            className="mb-12 font-serif text-3xl font-semibold leading-tight md:text-5xl"
+            className="mb-12 font-display text-3xl font-bold leading-tight md:text-5xl tracking-tight text-white"
           >
-            Tu próximo lanzamiento puede seguir igual… o puede empezar a recuperar parte de lo que hoy se está <span className="italic text-accent-light">perdiendo.</span>
+            Tu próximo lanzamiento puede seguir igual… o puede empezar a recuperar parte de lo que hoy se está <span className="font-serif italic font-medium text-accent-light">perdiendo.</span>
           </motion.h2>
 
           <motion.div

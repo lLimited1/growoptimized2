@@ -35,8 +35,8 @@ export const Solution = () => {
             <div className="h-[1px] w-8 bg-accent" />
             La solución
           </div>
-          <h2 className="mb-6 font-display text-4xl font-bold leading-tight md:text-6xl uppercase tracking-tight">
-            Implementamos ecosistemas de IA para <span className="text-accent-light">lanzamientos digitales</span>
+          <h2 className="mb-6 font-display text-3xl font-bold leading-tight md:text-5xl tracking-tight text-white">
+            Implementamos ecosistemas de IA para <span className="font-serif italic font-medium text-accent-light">lanzamientos digitales</span>
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-white/60">
             No para meter tecnología por meter. Sino para ayudarte a recuperar una parte de las ventas que hoy se te están escapando.

@@ -33,8 +33,8 @@ export const Cost = () => {
             <div className="h-[1px] w-8 bg-accent" />
             El costo invisible
           </div>
-          <h2 className="mb-6 font-display text-4xl font-bold leading-tight md:text-6xl uppercase tracking-tight">
-            Cada lead que no asiste o no recibe atención a tiempo hace que tu lanzamiento <span className="text-accent-light">rinda menos</span>
+          <h2 className="mb-6 font-display text-3xl font-bold leading-tight md:text-5xl tracking-tight text-white">
+            Cada lead que no asiste o no recibe atención a tiempo hace que tu lanzamiento <span className="font-serif italic font-medium text-accent-light">rinda menos</span>
           </h2>
           <p className="max-w-2xl text-lg text-white/60">
             Porque tú ya hiciste el trabajo pesado.
@@ -65,8 +65,8 @@ export const Cost = () => {
           viewport={{ once: true, margin: "-10%" }}
           className="mt-16 border-l-2 border-accent bg-gradient-to-r from-accent/5 to-transparent p-8"
         >
-          <p className="font-display text-xl font-bold italic text-white/90 md:text-3xl uppercase tracking-tight">
-            "No siempre vendes menos porque tu oferta sea mala. Muchas veces vendes menos porque demasiados leads no llegaron al momento correcto."
+          <p className="font-serif text-xl italic font-medium leading-relaxed text-white/90 md:text-2xl">
+            "No siempre vendes menos porque tu oferta sea mala. <span className="text-accent-light not-italic font-display font-bold">Muchas veces vendes menos porque demasiados leads no llegaron al momento correcto."</span>
           </p>
         </motion.div>
       </div>
