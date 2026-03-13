@@ -93,8 +93,8 @@ export const Hero = () => {
       </div>
 
       {/* Original Radial Glows (kept for depth, but reduced opacity) */}
-      <div className="absolute top-0 left-1/2 -z-10 h-[500px] w-[800px] -translate-x-1/2 bg-accent/10 blur-[120px]" />
-      <div className="absolute top-[20%] right-0 -z-10 h-[400px] w-[400px] bg-blue-500/5 blur-[100px]" />
+      <div className="absolute top-0 left-1/2 -z-10 h-[300px] w-full max-w-[800px] -translate-x-1/2 bg-accent/10 blur-[120px] md:h-[500px]" />
+      <div className="absolute top-[20%] right-0 -z-10 h-[300px] w-[300px] bg-blue-500/5 blur-[100px] md:h-[400px] md:w-[400px]" />
 
       <motion.div
         variants={containerVariants}
